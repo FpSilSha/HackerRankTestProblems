@@ -35,20 +35,53 @@ namespace TestProblems
         // Complete the sockMerchant function below.
         static int sockMerchant(int n, int[] ar)
         {
-            throw new Exception("Not Yet Implemented");
+            int numberOfPairs = 0;
+            List<int> nums = ar.Distinct().ToList();
+            foreach (int number in nums)
+            {
+                int repeats = 0;
+                for (int i = 0; i < ar.Count(); i++)
+                {
+                    if (number == ar[i])
+                    {
+                        repeats++;
+                    }
+                }
+                if (repeats == 1)
+                {
+                    repeats = 0;
+                    continue;
+                }
+                if (repeats % 2 == 0)
+                {
+                    numberOfPairs += repeats / 2;
+                }
+                else
+                {
+                    numberOfPairs += ((repeats - 1) / 2);
+                }
+                repeats = 0;
+            }
+            
+
+            return numberOfPairs;
         }
 
 
-        static void Main(string[] args)
+        public void Run()
         {
             //TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
             int n = Convert.ToInt32(Console.ReadLine());
-
+            // Test case
+            // int n = 10;
             int[] ar = Array.ConvertAll(Console.ReadLine().Split(' '), arTemp => Convert.ToInt32(arTemp))
             ;
+            // Test case
+            // int [] ar = [1,1,3,1,2,1,3,3,3,3];
             int result = sockMerchant(n, ar);
-
+            Console.WriteLine(result + " number of pairs");
+            Console.ReadKey();
            // textWriter.WriteLine(result);
 
            // textWriter.Flush();

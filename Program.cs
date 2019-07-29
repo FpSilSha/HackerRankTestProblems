@@ -10,7 +10,8 @@ namespace TestProblems
     {
         static void Main(string[] args)
         {
-
+            SockMerchant sm = new SockMerchant();
+            sm.Run();
         }
     }
 }
