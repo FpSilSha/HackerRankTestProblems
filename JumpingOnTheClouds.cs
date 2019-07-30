@@ -69,9 +69,11 @@ namespace TestProblems
            // TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
             int n = Convert.ToInt32(Console.ReadLine());
-
-            int[] c = Array.ConvertAll(Console.ReadLine().Split(' '), cTemp => Convert.ToInt32(cTemp))
-            ;
+            //Test case
+            // int n = 7;
+            int[] c = Array.ConvertAll(Console.ReadLine().Split(' '), cTemp => Convert.ToInt32(cTemp));
+            //Test case
+            // int[] c = new int[] { 0, 0, 1, 0, 0, 1, 0 };
             int result = jumpingOnClouds(n, c);
             Console.WriteLine(result + " moves made");
             Console.ReadKey();
