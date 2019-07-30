@@ -31,23 +31,37 @@ namespace TestProblems
         // Complete the repeatedString function below.
         static long repeatedString(string s, long n)
         {
-            long numberOfRepeats = 0;
+            int originalA = s.Count(c => c == 'a');
+            
+            long numberOfRepeats = (n / s.Length) * originalA;
+            long leftovers = n % s.Length;
+            long leftoverAs = s.Substring(0, (int)leftovers).Count(c => c == 'a');
+            long numberOfAs = leftoverAs + numberOfRepeats;
 
-
-            return numberOfRepeats;
+            return numberOfAs;
         }
-
+       
 
         public void Run()
         {
             //TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
             string s = Console.ReadLine();
+            //Test case 1
+            //string s = a;
 
+            //Test case 2
+            //string s = aba;
             long n = Convert.ToInt64(Console.ReadLine());
+            //Test case 1
+            //long n = 1000000000000
 
+            //Test case 2
+            //long n = 10
             long result = repeatedString(s, n);
 
+            Console.WriteLine("a appeared " + result + " time(s)");
+            Console.ReadKey();
             //textWriter.WriteLine(result);
 
             //textWriter.Flush();
