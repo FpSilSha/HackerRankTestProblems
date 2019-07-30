@@ -19,10 +19,12 @@ namespace TestProblems
             JumpingOnTheClouds jotc = new JumpingOnTheClouds();
             // jotc.Run();
 
+            RepeatedString rp = new RepeatedString();
+            // rp.Run();
 
 
-
-
+            string s = "aaba";
+            
 
 
 
