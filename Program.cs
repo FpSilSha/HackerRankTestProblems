@@ -14,9 +14,10 @@ namespace TestProblems
            // sm.Run();
 
             CountingValleys cm = new CountingValleys();
-            cm.Run();
+            // cm.Run();
 
-
+            JumpingOnTheClouds jotc = new JumpingOnTheClouds();
+            // jotc.Run();
 
 
 
