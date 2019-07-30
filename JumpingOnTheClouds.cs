@@ -31,11 +31,37 @@ namespace TestProblems
 
         */
         // Complete the jumpingOnClouds function below.
-        static int jumpingOnClouds(int[] c)
+        static int jumpingOnClouds(int n, int[] c)
         {
-            int result = 0;
-
-            return result;
+            int movesMade = 0;
+            int currentPlace = 0;
+            int placePlusOne = 0;
+            int placePlusTwo = 0;
+            
+            bool endReached = false;
+            while (!endReached)
+            {
+                placePlusOne = currentPlace + 1;
+                placePlusTwo = currentPlace + 2;
+                if(currentPlace != (n-1))
+                {
+                    if((placePlusTwo != c.Count() && placePlusTwo != (c.Count() + 1) && c[placePlusTwo] != 1))
+                    {
+                        currentPlace = placePlusTwo;
+                        movesMade++;
+                    }
+                    else
+                    {
+                        currentPlace = placePlusOne;
+                        movesMade++;
+                    }
+                }
+                else
+                {
+                    endReached = true;
+                }
+            }
+            return movesMade;
         }
 
         public void Run()
@@ -46,8 +72,9 @@ namespace TestProblems
 
             int[] c = Array.ConvertAll(Console.ReadLine().Split(' '), cTemp => Convert.ToInt32(cTemp))
             ;
-            int result = jumpingOnClouds(c);
-
+            int result = jumpingOnClouds(n, c);
+            Console.WriteLine(result + " moves made");
+            Console.ReadKey();
            // textWriter.WriteLine(result);
 
            // textWriter.Flush();
