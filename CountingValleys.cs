@@ -41,7 +41,35 @@ namespace TestProblems
         static int countingValleys(int n, string s)
         {
             int numberOfValleys = 0;
-
+            int currentElevation = 0;
+            int previousElevation = 0;
+            bool vallyReset = false;
+            foreach(char letter in s)
+            {
+                
+                string letterS = letter.ToString();
+                switch (letterS)
+                {
+                    case "D":
+                        previousElevation = currentElevation;
+                        currentElevation--;
+                        break;
+                    case "U":
+                        previousElevation = currentElevation;
+                        currentElevation++;
+                        break;
+                }
+                if(currentElevation == 0 && previousElevation < 0)
+                {
+                    vallyReset = true;
+                }
+                if (vallyReset)
+                {
+                    numberOfValleys++;
+                    vallyReset = false;
+                }
+                
+            }
             return numberOfValleys;
         }
 
@@ -50,9 +78,11 @@ namespace TestProblems
            // TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
             int n = Convert.ToInt32(Console.ReadLine());
-
+            //Test Case
+            // int n = 12;
             string s = Console.ReadLine();
-
+            //Test Case
+            // string s = "DDUUDDUDUUUD";
             int result = countingValleys(n, s);
             Console.WriteLine(result + " valley(s) crossed");
             Console.ReadKey();
