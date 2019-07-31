@@ -38,6 +38,7 @@ namespace TestProblems
         {
             int fDia = 0;
             int sDia = 0;
+            int j = 0;
             for (int i = 0; i < n; i++)
             {
                 fDia += arr[i][i];
@@ -45,7 +46,9 @@ namespace TestProblems
             }
             for (int i = n - 1; i >= 0; i--)
             {
-                sDia += arr[i][i];
+                
+                sDia += arr[j][i];
+                j++;
             }
 
             return Math.Abs(fDia - sDia);
@@ -77,7 +80,8 @@ namespace TestProblems
             }
             */
             int result = diagonalDifference(n, arr);
-            
+            Console.WriteLine(result);
+            Console.ReadKey();
             // textWriter.WriteLine(result);
 
             // textWriter.Flush();
