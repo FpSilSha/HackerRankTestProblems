@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CountingValleys.cs" />
+    <Compile Include="DiagnalDifference.cs" />
     <Compile Include="JumpingOnTheClouds.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -10,7 +10,7 @@ namespace TestProblems
     {
         static void Main(string[] args)
         {
-            // Test within Warm-Up Challenges
+            
             SockMerchant sm = new SockMerchant();
            // sm.Run();
 
@@ -23,10 +23,13 @@ namespace TestProblems
             RepeatedString rp = new RepeatedString();
             // rp.Run();
 
-
-           
+            DiagnalDifference dd = new DiagnalDifference();
+            dd.Run();
             
 
+
+
+            
 
 
 
