@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,17 +25,16 @@ namespace TestProblems
             // rp.Run();
 
             DiagnalDifference dd = new DiagnalDifference();
-            dd.Run();
+            // dd.Run();
+
+            PlusMinus pm = new PlusMinus();
+            pm.Run();
+
+             
+
+          
+
             
-
-
-
-            
-
-
-
-
-
 
         }
     }
